@@ -3,9 +3,16 @@
   <input type = "text"
   #searchInput
   />
-  <section *ngIf="currentSearchRes">
-    il y a {{currentSearchRes.total_results}} résultat
-  </section>
+    <table *ngIf="currentSearchRes">
+      <thead>
+        <th>Poster</th>
+        <th>Titre</th>
+        <th>Description</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let movie of currentSearchRes.results">
+          <app-movie [movieid]="movie.id"></app-movie>
+        </tr>
+      </tbody>
+    </table>
 </form>
-{{currentSearchRes | json}}
-

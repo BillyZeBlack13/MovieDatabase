@@ -19,9 +19,4 @@ export class AppComponent {
   search(txt: string) {
     this.tmdb.search( {query: txt} ).subscribe(res => this.currentSearchRes = res);
   }
-
-
-  //
-
-
 }//fin de classe

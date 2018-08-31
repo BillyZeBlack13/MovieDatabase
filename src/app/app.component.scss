@@ -1,0 +1,19 @@
+table
+{
+  border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
+}
+td
+{
+  border: 1px solid blue;
+}
+//
+.zoom table img {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+.zoom table:hover img {
+  -webkit-transform: scale(1.3);
+  transform: scale(1.3);
+}

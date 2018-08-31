@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {SearchMovieResult, SearchMovieQuery} from './app.dataTypes/SearchMovie';
 import {Observable} from 'rxjs';
+import {Movie} from "./app.dataTypes/Movie";
 
 function toObjectString(obj: Object): {[key: string]: string} {
   const objString = {};
@@ -31,6 +32,12 @@ export class TMDbService {
     const searchURL = `${this.TMDb_url}/search/movie`;
     req.api_key = req.api_key || this.api_key;
     return this.http.get(searchURL, {params: toObjectString(req), responseType: 'json'});
+  }
+
+  getMovie(id: number): Observable<Movie> {
+    const movieURL = `${this.TMDb_url}/movie/${id}`;
+    const req = {api_key: this.api_key};
+    return this.http.get(movieURL, {params: toObjectString(req), responseType: 'json'});
   }
 }
 
