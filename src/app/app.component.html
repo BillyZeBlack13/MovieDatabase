@@ -11,8 +11,12 @@
       </thead>
       <tbody>
         <tr *ngFor="let movie of currentSearchRes.results">
-          <app-movie [movieid]="movie.id"></app-movie>
+         <!-- <app-movie [movieid]="movie.id"></app-movie>-->
+          <nav>
+            <a routerLink="/movie">Movie</a>
+          </nav>
         </tr>
       </tbody>
     </table>
 </form>
+<router-outlet></router-outlet>

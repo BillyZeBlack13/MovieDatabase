@@ -5,6 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import {FormsModule} from '@angular/forms';
 import {MovieComponent} from './movie/movie.component';
+import {RouterModule, Routes} from "@angular/router";
+
+
+const routes: Routes = [
+  { path: 'movie', component: MovieComponent}
+];
 
 @NgModule({
   declarations: [
@@ -15,7 +21,7 @@ import {MovieComponent} from './movie/movie.component';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-
+    RouterModule.forRoot(routes),
   ],
   providers: [],
   bootstrap: [AppComponent]
