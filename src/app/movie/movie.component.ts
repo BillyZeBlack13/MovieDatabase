@@ -16,9 +16,7 @@ export class MovieComponent implements OnInit {
   @Input() movieid: number;
 
   //
-  constructor(private tmdb: TMDbService, private route: ActivatedRoute) {
-    console.log("New movie compo");
-  }
+  constructor(private tmdb: TMDbService, private route: ActivatedRoute) {}
 
   ngOnInit() {
     if (this.movieid) {
